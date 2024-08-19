@@ -16,28 +16,6 @@
         </div>
 
     </nav>
-    <!-- <nav>
-        <div id="main-navbar">
-        <div id="logo">
-            <img src="img/tmpLogo.png"
-            class="main-logo"
-            >
-            <div class="title-logo">
-            Korean Tier
-            </div>
-        </div>
-        <div id="menu-navbar">
-        <li>드라마 랭킹</li>
-        <li>영화 랭킹</li>
-        <li>웹툰 랭킹</li>
-        <li>추천</li> 
-        </div>
-        </div>
-        <div id="login-navbar">
-        <li>로그인</li>
-        <li>로그아웃</li>
-        </div>
-    </nav> -->
 </template>
 
 
