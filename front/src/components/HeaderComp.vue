@@ -28,6 +28,7 @@
     font-family: GmarketSansMedium;
     position: fixed;
     background-color: rgb(33 58 168/1);
+    width: 100vw;
     left: 0;
     right: 0;
     top: 0;

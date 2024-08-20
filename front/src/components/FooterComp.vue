@@ -15,11 +15,9 @@
 
 <style scoped>
     #footer-container {
-        position: absolute;
-        bottom: 0;
         background-color: rgb(24 28 42 / 1);
         max-width: 100%;
-        min-width: 1280px;
+        min-width: 100vw;
         width: 100%;
         line-height: 20px;
         margin-bottom: 0;
