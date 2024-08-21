@@ -24,9 +24,11 @@
 
 </div>
 <div id="make-tier-container">
+    <a href="/tier">
     <button>
         <div></div> 티어표 만들기
     </button>
+    </a>
 </div>
 </template>
 
@@ -41,6 +43,10 @@ export default {
 </script>
 
 <style scoped>
+a {
+    text-decoration: inherit;
+    cursor: pointer;
+}
 #search-container {
     padding: 60px 80px 40px 80px;
     justify-content: center;
@@ -158,37 +164,6 @@ export default {
     gap: 8px;
 }
 
-#card-container-title h2 small {
-    font-family: GmarketSansMedium;
-    opacity: .7;
-    font-weight: 400;
-    font-size: 80%;
-}
-
-/* swiper-container {
-    margin-top: 16px;
-    height: 100%;
-    width: 100vw;
-    min-width: 1248px;
-    max-width: 1248px;
-    overflow: visible !important;
-    color: white;
-    touch-action: pan-y;
-    list-style: none;
-    z-index: 1;
-    display: block;
-}
-
-swiper-slide {
-    margin-top: 146px;
-    height: 240px;
-    width: 180px;
-    overflow: hidden;
-    border-radius: 8px;
-    transform: translateZ(0);
-    backface-visibility: hidden;
-
-} */
 
 #make-tier-container button {
     font-family: GmarketSansMedium;
