@@ -1,0 +1,25 @@
+<template>
+    <card>
+        <slot></slot>
+    </card>
+</template>
+
+<style scoped>
+
+card {
+    backdrop-filter: blur(40px);
+    max-width: 500px;
+    height: 100%;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    padding-left: 24px;
+    padding-right: 24px;
+    margin-bottom: 10%;
+    background-color: rgb(255 255 255 / .2);
+    border-radius: 16px;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+}
+</style>
