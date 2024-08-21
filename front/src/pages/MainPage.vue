@@ -24,6 +24,9 @@
 
 </div>
 <div id="make-tier-container">
+    <button>
+        <div></div> 티어표 만들기
+    </button>
 </div>
 </template>
 
@@ -75,7 +78,7 @@ export default {
     color: rgb(193 197 202 / 1);
     font-weight: 700;
     font-size: 14px;
-    gap: 4px;
+    gap: 6px;
     align-items: center;
     display: inline-flex
 }
@@ -85,7 +88,7 @@ export default {
     height: 32px;
     width: 240px;
     border-radius: 4px;
-    background-color: rgb(33 58 150/1);
+    background-color: rgb(33 58 150/0.8);
     align-items: center;
     text-align: center;
     color: white;
@@ -111,7 +114,8 @@ export default {
 }
 
 #ranking_num {
-    margin-right: 4px;
+    margin-right: 6px;
+    margin-left: 5px;
     display: inline-block;
     height: 20px;
     width: 20px;
@@ -160,6 +164,7 @@ export default {
     font-weight: 400;
     font-size: 80%;
 }
+
 /* swiper-container {
     margin-top: 16px;
     height: 100%;
@@ -184,4 +189,23 @@ swiper-slide {
     backface-visibility: hidden;
 
 } */
+
+#make-tier-container button {
+    font-family: GmarketSansMedium;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    padding: 8px 16px 8px 16px;
+    border-color: transparent;
+    border-width: 1px;
+    border-radius: 8px;
+    align-items: center;
+    width: 30%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    background-color: rgb(33 58 150 / 1);
+    color: white;
+
+}
 </style>

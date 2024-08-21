@@ -36,7 +36,7 @@
                 </div>
             </div>
             <button type="submit">
-                <div class="loading-spinner mr-2 h-6 w-6 bg-white hidden"></div> 회원가입
+                <div></div> 회원가입
             </button>
         </div>
     </div>
