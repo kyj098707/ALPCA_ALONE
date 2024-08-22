@@ -1,0 +1,159 @@
+#join-container {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+#join-card {
+    backdrop-filter: blur(40px);
+    max-width: 500px;
+    height: 100%;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    padding-left: 24px;
+    padding-right: 24px;
+    /* margin-top:60px; */
+    margin-bottom: 10%;
+    background-color: rgb(255 255 255 / .2);
+    border-radius: 16px;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+}
+
+#join-card button {
+    font-family: GmarketSansMedium;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    padding: 8px 16px 8px 16px;
+    border-color: transparent;
+    border-width: 1px;
+    border-radius: 8px;
+    align-items: center;
+    width: 100%;
+
+    background-color: rgb(33 58 150 / 1);
+    color: white;
+
+}
+
+#join-content-img {
+    height: 100px;
+    width: auto;
+}
+
+#join-card h1 {
+    font-family: GmarketSansMedium;
+    font-weight: 700;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    align-self: stretch;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+#join-card h2 {
+    font-family: GmarketSansMedium;
+    font-weight: 500;
+    color: rgb(218 223 231 / 1);
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    align-self: stretch;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+#join-form {
+    width: 100%;
+}
+
+#join-form div {
+    font-family: NanumSquareNeo-Variable;
+    gap: 4px;
+    flex-direction: column;
+    display: flex;
+    text-align: left;
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 4px;
+    color: rgb(218 223 231 / 1);
+}
+
+#join-form input {
+    color: rgb(53 57 69 / 1);
+    padding: 8px 12px 8px 12px;
+    border-color: rgb(211 220 233 / 1);
+    border-width: 1px;
+    border-radius: 8px;
+    appearance: none;
+    box-sizing:border-box;
+    font-family: GmarketSansMedium;
+}
+
+#join-agreement {
+    margin-top: 3%;
+    gap: 16px;
+    flex-direction: column;
+    display: flex;
+    justify-content: start;
+    width: 100%;
+
+}
+
+#join-agreement span {
+    color: rgb(218 223 231 / 1);
+    font-weight: 60;
+    line-height: 20px;
+    font-size: 14px;
+    font-family: LINESeedKR-Bd;
+    align-items: center;
+}
+
+#join-agreement p {
+    color: rgb(218 223 231 / 1);
+    line-height: 14px;
+    font-size: 12px;
+    font-family: LINESeedKR-Bd;
+    align-items: center;
+}
+
+#join-agreement a {
+    align-items: center;
+    color: rgb(33 58 150 / 1);
+    font-weight: 700;
+    text-decoration: inherit;
+    font-family: LINESeedKR-Bd;
+}
+
+.checkbox {
+    background-color: white;
+    height: 1.5rem;
+    width: 1.5rem;
+    flex-shrink: 0;
+    cursor: pointer;
+    border-width: 1px;
+
+}
+
+.join-agreement-line {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+
+.agreement-line-content {
+    gap: 4px;
+    align-items: center;
+    display: flex;
+}
+
+.agreemnt-line-content-flex {
+    display: flex;
+    flex-direction: column;
+}

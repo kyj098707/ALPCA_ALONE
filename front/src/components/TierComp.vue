@@ -93,43 +93,5 @@ export default {
 </script>
 
 <style>
-
-#container {
-    display: flex;
-}
-
-.col {
-    display: flex;
-    height: 500px;
-    width: 150px;
-    background-color: #fff;
-    border: 1px solid lightgrey;
-    margin-left: 5px;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 8px;
-}
-
-.box {
-    width: 130px;
-    height: 50px;
-    background-color: #7b71b7;
-    margin-top: 10px;
-    border-radius: 5px;
-
-}
-
-.grade-box {
-    width: 100%;
-    height: 50px;
-    background-color: #000000;
-    margin-bottom: 10px;
-    border-radius: 5px;
-}
-
-p {
-    text-align: center;
-    line-height: 50px;
-    color: white;
-}
+@import "../css/comp-tier.css"
 </style>

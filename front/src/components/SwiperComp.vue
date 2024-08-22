@@ -63,24 +63,6 @@ export default {
 </script>
 
 <style scoped>
-
-.swiper {
-  width: 100%;
-  height: 100%;
-}
-
-
-
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-}
+@import "../css/comp-swiper.css"
 
 </style>
