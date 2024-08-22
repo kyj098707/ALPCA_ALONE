@@ -1,0 +1,84 @@
+product-card {
+    max-width: 500px;
+}
+#product-title {
+    font-family: GmarketSansMedium;
+    font-weight: 700;
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    align-self: stretch;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+card {
+    max-width: 300px;
+}
+
+card h3{
+    font-family: GmarketSansMedium;
+    font-weight: 700;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    align-self: stretch;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+.product-infobox {
+    padding: 0px 20px 0px 20px;
+
+}
+.product-infobox h2 {
+    font-family: GmarketSansMedium;
+    font-weight: 500;
+    color: rgb(218 223 231 / 1);
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    align-self: stretch;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+.product-infobox h3 {
+    font-family: GmarketSansMedium;
+    font-weight: 500;
+    color: rgb(218 223 231 / 1);
+    font-size: 16px;
+    line-height: 15px;
+    text-align: center;
+    align-self: stretch;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+
+
+#additional-function {
+    align-self: stretch;
+    gap: 8px;
+    justify-content: space-around;
+    display: flex;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+#additional-function a {
+    align-items: center;
+    font-family: GmarketSansMedium;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    color: white;
+    text-decoration: inherit;
+    display: flex;
+}
+
+#additional-function p {
+    text-align: center;
+    color: white;
+    font-size: 14px;
+    line-height: 20px;
+}

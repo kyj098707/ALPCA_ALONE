@@ -4,8 +4,8 @@ const router = createRouter({
     routes: [
         {      
             path: "/",
-            name: "home",
-            component: () => import("../pages/HomePage.vue"),
+            name: "main",
+            component: () => import("../pages/MainPage.vue"),
         },
         {
             path: "/login",
@@ -17,6 +17,11 @@ const router = createRouter({
             name: "join",
             component: () => import("../pages/JoinPage.vue"),
         },
+        {
+            path: "/tier",
+            name: "tier",
+            component: () => import("../pages/TierPage.vue"),
+        }
     ],
 });
 export default router;
