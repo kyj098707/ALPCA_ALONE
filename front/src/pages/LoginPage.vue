@@ -1,15 +1,15 @@
 <template>
-<div id="login-container">
+<div id="login-container">  
     <div id="login-card">
         <img id="login-content-img" src="img/favicon.png">
-        <h1> K-COLOSSEUM 로그인 </h1>
+        <h1> KTier 로그인 </h1>
         <h2> 이메일 로그인 </h2>
         <div id="login-form">
-            <div> <input type="email" id="email-input" placeholder="Email Address"> </div>
-            <div> <input type="password" id="password-input" placeholder="Password"> </div>
+            <div> <input type="email" v-model="email" id="email-input" placeholder="Email Address"> </div>
+            <div> <input type="password" v-model="password" id="password-input" placeholder="Password"> </div>
         </div>
 
-        <button id="login-btn">
+        <button id="login-btn" @click="login">
             <div class="loading-spinner mr-2 h-6 w-6 bg-white hidden"></div>로그인
         </button>
 
@@ -23,6 +23,29 @@
 
 
 <script>
+import axios from "axios";
+
+export default {
+    data() {
+        return {
+            email: '',
+            password: '',
+        };
+    },
+    methods: {
+        async login() {
+            try {
+                const response= await axios.post('http://localhost:8080/login', {
+                    email : this.email,
+                    password : this.password,
+                });
+                console.log(response);
+            } catch (error) {
+                console.log("로그인 실패", error);
+            }
+        }
+    }
+};
 
 </script>
 
