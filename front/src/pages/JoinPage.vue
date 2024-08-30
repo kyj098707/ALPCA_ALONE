@@ -72,10 +72,11 @@ export default {
             }
 
             try {
-                const response = await axios.post('http://localhost:8080/join', form.value);
+                const response = await axios.post('http://localhost:8080/join', form.value)
                 alert("회원가입 성공");
                 console.log(response);
-            } catch (error) {
+            }
+            catch (error) {
                 console.log(error);
                 alert("회원가입 실패")
             }

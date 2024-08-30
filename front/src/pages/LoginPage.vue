@@ -39,6 +39,7 @@ export default {
                     email : this.email,
                     password : this.password,
                 });
+                this.$router.push('/');
                 console.log(response);
             } catch (error) {
                 console.log("로그인 실패", error);
