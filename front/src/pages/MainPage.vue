@@ -1,6 +1,6 @@
 <template>
 <div id="search-container">
-    <div id="search-box"> <input type="search" id="default-search" placeholder="작품 검색하기"> </div>
+    <div id="search-box"> <input type="search" id="default-search" placeholder="작품 검색하기">  </div>
     <div id="hot-keyword-container">
         <span>실시간 검색어</span>
         <div id="keyword">
@@ -14,7 +14,7 @@
         <h2>
             주목해야 할 작품
             <small>
-                08-21 09:21 한국시간 기준
+                {{ formattedTime }} 한국시간 기준
             </small>
         </h2>
     </div>
@@ -25,9 +25,9 @@
 </div>
 <div id="make-tier-container">
     <a href="/tier">
-    <button>
-        <div></div> 티어표 만들기
-    </button>
+        <button>
+            <div></div> 티어표 만들기
+        </button>
     </a>
 </div>
 </template>
@@ -36,12 +36,36 @@
 import SwiperComp from '../components/SwiperComp.vue';
 
 export default {
+    data() {
+        return {
+            currentTime: new Date()
+        };
+    },
+    computed: {
+        formattedTime() {
+            const koreaOffset = 9 * 60;
+            const utc = this.currentTime.getTime() + (this.currentTime.getTimezoneOffset() * 60000);
+            const koreaTime = new Date(utc + (koreaOffset * 60000));
+
+            const day = koreaTime.getDate().toString().padStart(2, '0');
+            const month = (koreaTime.getMonth() + 1).toString().padStart(2, '0');
+            const hours = koreaTime.getHours().toString().padStart(2, '0');
+            const minutes = koreaTime.getMinutes().toString().padStart(2, '0');
+
+            return `${month}-${day} ${hours}:${minutes}`;
+        }
+    },
     components: {
         SwiperComp,
     },
+      mounted() {
+    setInterval(() => {
+      this.currentTime = new Date();
+    }, 1000);
+  }
 };
 </script>
 
-<style scoped>
+<style scoped>  
 @import "../css/page-main.css"
 </style>

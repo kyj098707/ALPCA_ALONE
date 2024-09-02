@@ -2,41 +2,14 @@
 <swiper :slidesPerView="4" :spaceBetween="30" :pagination="{
       clickable: true,
     }" :modules="modules" class="mySwiper">
-    <swiper-slide>
-        <productcard>
-            Slide 1
-        </productcard>
-    </swiper-slide>
-    <swiper-slide>
-        <productcard>
-            Slide 2
-        </productcard>
-    </swiper-slide>
-    <swiper-slide>
-        <productcard>
-            Slide 3
-        </productcard>
-    </swiper-slide>
-
-    <swiper-slide>
-        <productcard>
-            Slide 4
-        </productcard>
-    </swiper-slide>
-    <swiper-slide>
-        <productcard>
-            Slide 5
-        </productcard>
-    </swiper-slide>
-    <swiper-slide>
-        <productcard>
-            Slide 6
-        </productcard>
+    <swiper-slide v-for="(product, index) in products" :key="index">
+        <productcard :title="product.title" :image="product.imageUrl" :rating="product.rating" :rank="product.rank" :type="product.type" :genre="product.genre" :detailLink="product.detailLink" :registerLink="product.registerLink"></productcard>
     </swiper-slide>
 </swiper>
 </template>
 
 <script>
+import axios from "axios";
 import productcard from './ProductCardComp.vue';
 import {
     Swiper,
@@ -46,9 +19,20 @@ import 'swiper/css'
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import { Pagination } from 'swiper/modules';
+import {
+    Pagination
+} from 'swiper/modules';
 
 export default {
+    mounted() {
+       axios.get("http://localhost:8080/product/trending")
+       .then(response => {
+        this.products = response.data;
+       })
+       .catch(error => {
+        console.log(error)
+       })
+    },
     components: {
         Swiper,
         SwiperSlide,
@@ -56,13 +40,14 @@ export default {
     },
     data() {
         return {
-          modules: [Pagination],
+            modules: [Pagination],
+            products: []
         };
     },
+
 };
 </script>
 
 <style scoped>
 @import "../css/comp-swiper.css"
-
 </style>

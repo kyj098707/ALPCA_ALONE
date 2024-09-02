@@ -9,6 +9,7 @@ a {
     display: flex;
     margin-left: auto;
     margin-right: auto;
+
 }
 
 #search-box {
@@ -18,6 +19,7 @@ a {
     border-width: 0;
     border-style: solid;
     border-color: #e5e7eb;
+
 }
 
 #keyword {
