@@ -1,6 +1,6 @@
 <template>
 <div id="search-container">
-    <div id="search-box"> <input type="search" id="default-search" placeholder="작품 검색하기"> </div>
+    <div id="search-box"> <input type="search" id="default-search" placeholder="작품 검색하기">  </div>
     <div id="hot-keyword-container">
         <span>실시간 검색어</span>
         <div id="keyword">
@@ -43,12 +43,10 @@ export default {
     },
     computed: {
         formattedTime() {
-            // 현재 시간과 한국 시간대 오프셋을 계산합니다.
-            const koreaOffset = 9 * 60; // 한국은 UTC+9
+            const koreaOffset = 9 * 60;
             const utc = this.currentTime.getTime() + (this.currentTime.getTimezoneOffset() * 60000);
             const koreaTime = new Date(utc + (koreaOffset * 60000));
 
-            // 시간을 포맷합니다.
             const day = koreaTime.getDate().toString().padStart(2, '0');
             const month = (koreaTime.getMonth() + 1).toString().padStart(2, '0');
             const hours = koreaTime.getHours().toString().padStart(2, '0');
@@ -61,7 +59,6 @@ export default {
         SwiperComp,
     },
       mounted() {
-    // 현재 시간을 업데이트할 수 있는 타이머 설정
     setInterval(() => {
       this.currentTime = new Date();
     }, 1000);

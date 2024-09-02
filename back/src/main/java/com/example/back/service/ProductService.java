@@ -38,6 +38,16 @@ public class ProductService {
         return res;
     }
 
+    public List<ProductListDto> findDefaultTierProduct() {
+        List<ProductEntity> products = productRepository.findTop20ByOrderByRatingDesc();
+
+        List<ProductListDto> res = products.stream()
+                .map(ProductListDto::new)
+                .collect(toList());
+
+        return res;
+    }
+
     public ProductDetailDto findById(Integer id) {
         ProductEntity product = productRepository.findById(id).orElseThrow(IllegalAccessError::new);
         ProductDetailDto res = new ProductDetailDto(product);

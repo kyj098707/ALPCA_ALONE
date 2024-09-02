@@ -1,9 +1,8 @@
 <template>
-
-    <card>
-        <product-card>
+<card>
+    <product-card>
         <h1 id="product-title"> {{ title }} </h1>
-        <img id="card-image" :src= "image">
+        <img id="card-image" :src="image">
         <h3> 작품 정보 </h3>
         <div class="product-infobox">
             <h3>등급: {{ rating }}</h3>
@@ -16,9 +15,8 @@
             </div>
 
         </div>
-</product-card>
+    </product-card>
 </card>
-
 </template>
 
 <script>
@@ -29,41 +27,41 @@ export default {
         card,
     },
     props: {
-    title: {
-      type: String,
-      required: true
+        title: {
+            type: String,
+            required: true
+        },
+        image: {
+            type: String,
+            required: true
+        },
+        rating: {
+            type: String,
+            required: true
+        },
+        rank: {
+            type: Number,
+            required: true
+        },
+        type: {
+            type: String,
+            required: true
+        },
+        genre: {
+            type: String,
+            required: true
+        },
+        detailLink: {
+            type: String,
+            required: true
+        },
+        registerLink: {
+            type: String,
+            required: true
+        }
     },
-    image: {
-      type: String,
-      required: true
-    },
-    rating: {
-      type: String,
-      required: true
-    },
-    rank: {
-      type: Number,
-      required: true
-    },
-    type: {
-      type: String,
-      required: true
-    },
-    genre: {
-      type: String,
-      required: true
-    },
-    detailLink: {
-      type: String,
-      required: true
-    },
-    registerLink: {
-      type: String,
-      required: true
-    }
-  },
     data() {
-        return {    
+        return {
 
         };
     },

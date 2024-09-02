@@ -33,6 +33,13 @@ public class ProductApiController {
         return ResponseEntity.ok().body(res);
     }
 
+    @GetMapping("/product/defaulttier")
+    public ResponseEntity<?> getDefaultTierProductList() {
+
+        List<ProductListDto> res = productService.findDefaultTierProduct();
+        return ResponseEntity.ok().body(res);
+    }
+
     @GetMapping("/product/{id}")
     public ResponseEntity<?> getProductDetail(@PathVariable Integer id) {
 

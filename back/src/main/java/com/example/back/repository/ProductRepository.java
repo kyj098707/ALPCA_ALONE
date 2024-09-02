@@ -14,4 +14,6 @@ public interface ProductRepository extends JpaRepository<ProductEntity, Integer>
 
 //    @Query("SELECT p FROM ProductEntity p ORDER BY p.rating DESC")
     List<ProductEntity> findTop10ByOrderByRatingDesc();
+
+    List<ProductEntity> findTop20ByOrderByRatingDesc();
 }

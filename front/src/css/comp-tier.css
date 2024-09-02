@@ -1,39 +1,81 @@
 
 #container {
     display: flex;
-}
+    flex-direction: column;
+} 
 
 .col {
-    display: flex;
-    height: 500px;
-    width: 150px;
-    background-color: #fff;
-    border: 1px solid lightgrey;
+    
+    height: 120px;
+    width: 100%;
+    background-color: rgba(1, 3, 14, 0.4    );
     margin-left: 5px;
-    flex-direction: column;
     align-items: center;
     border-radius: 8px;
+    display: flex;
+    
+}
+.tier-content-box {
+    overflow-x: scroll;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 90%;
+    
+}
+.tier-content-box::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
 }
 
-.box {
-    width: 130px;
-    height: 50px;
-    background-color: #7b71b7;
-    margin-top: 10px;
+.box {  
+    font-family: GmarketSansMedium;
+    font-size : 0.8rem;
+    width: 100px;
+
+    color: #c10000;
     border-radius: 5px;
-
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
 }
+
+.box-image {
+    height: 100px;
+    width: 100px;
+}
+
+.content-box  {
+    background-color: #000000;
+    height: 20px;
+    width: 100px;
+    font-family: GmarketSansMedium;
+    font-weight: 700;
+    font-size: 0.5rem;
+    display: flex;  
+    text-align: center;
+    align-items: center;
+    overflow: hidden;
+    justify-content: center;
+}
+
 
 .grade-box {
-    width: 100%;
-    height: 50px;
-    background-color: #000000;
-    margin-bottom: 10px;
+    font-family: GmarketSansMedium;
+    font-weight: 700;
+    font-size: 1.4rem;
+    width: 10%;
+    height:100%;
+    background-color: rgb(10 10 10 / .5);
+    color: rgb(255, 249, 249);
     border-radius: 5px;
-}
-
-p {
     text-align: center;
-    line-height: 50px;
-    color: white;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
 }
