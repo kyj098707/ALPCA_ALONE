@@ -32,7 +32,7 @@ public class ProductListDto {
         this.id = product.getId();
         this.title = product.getTitle();
         this.type = product.getType();
-        this.genre = product.getGenre();
+        this.genre = product.getGenre().split(",")[0];
         this.rank = product.getRank();
         this.rating = product.getRating();
         this.tier = product.getTier();

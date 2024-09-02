@@ -26,6 +26,13 @@ public class ProductApiController {
         return ResponseEntity.ok().body(res);
     }
 
+    @GetMapping("/product/trending")
+    public ResponseEntity<?> getTrendingProductList() {
+
+        List<ProductListDto> res = productService.findTrendingProduct();
+        return ResponseEntity.ok().body(res);
+    }
+
     @GetMapping("/product/{id}")
     public ResponseEntity<?> getProductDetail(@PathVariable Integer id) {
 
@@ -34,4 +41,6 @@ public class ProductApiController {
         if (res == null) return ResponseEntity.notFound().build();
         return ResponseEntity.ok().body(res);
     }
+
+
 }

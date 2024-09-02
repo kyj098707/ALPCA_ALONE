@@ -34,6 +34,5 @@ public class ProductEntity {
     @Column(nullable = false)
     @ColumnDefault("0")
     private Long hits;
-
     private String imageUrl;
 }

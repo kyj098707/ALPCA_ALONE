@@ -28,6 +28,16 @@ public class ProductService {
         return res;
     }
 
+    public List<ProductListDto> findTrendingProduct() {
+        List<ProductEntity> products = productRepository.findTop10ByOrderByRatingDesc();
+
+        List<ProductListDto> res = products.stream()
+                .map(ProductListDto::new)
+                .collect(toList());
+
+        return res;
+    }
+
     public ProductDetailDto findById(Integer id) {
         ProductEntity product = productRepository.findById(id).orElseThrow(IllegalAccessError::new);
         ProductDetailDto res = new ProductDetailDto(product);
