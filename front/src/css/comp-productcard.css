@@ -1,5 +1,8 @@
 product-card {
     max-width: 500px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
 }
 #product-title {
     font-family: GmarketSansMedium;
@@ -81,4 +84,10 @@ card h3{
     color: white;
     font-size: 14px;
     line-height: 20px;
+}
+
+#card-image {
+    width: 200px;
+    height: 200px;
+    align-items: center;
 }

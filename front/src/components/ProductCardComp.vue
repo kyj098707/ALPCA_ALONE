@@ -3,12 +3,12 @@
     <card>
         <product-card>
         <h1 id="product-title"> {{ title }} </h1>
-        <img :src= "image">
+        <img id="card-image" :src= "image">
         <h3> 작품 정보 </h3>
         <div class="product-infobox">
             <h3>등급: {{ rating }}</h3>
             <h3>순위: {{ rank }}</h3>
-            <h3>타입: {{ type }}</h3>
+            <h3>타입: 드라마</h3>
             <h3>장르: {{ genre }}</h3>
             <div id="additional-function">
                 <a href="/member/recovery_password" class="text-rg font-medium text-white hover:text-psbl-light">상세정보</a>
