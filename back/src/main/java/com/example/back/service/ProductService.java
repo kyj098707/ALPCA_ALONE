@@ -53,4 +53,10 @@ public class ProductService {
         ProductDetailDto res = new ProductDetailDto(product);
         return res;
     }
+
+    public ProductListDto findByTitle(String title) {
+        ProductEntity product = productRepository.findByTitle(title);
+        ProductListDto res = new ProductListDto(product);
+        return res;
+    }
 }
