@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @Repository
@@ -16,4 +17,6 @@ public interface ProductRepository extends JpaRepository<ProductEntity, Integer>
     List<ProductEntity> findTop10ByOrderByRatingDesc();
 
     List<ProductEntity> findTop20ByOrderByRatingDesc();
+
+    ProductEntity findByTitle(String title);
 }

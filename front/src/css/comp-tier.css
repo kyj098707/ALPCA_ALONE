@@ -7,7 +7,7 @@
 .col {
     
     height: 120px;
-    width: 100%;
+    width: 95%;    
     background-color: rgba(1, 3, 14, 0.4    );
     margin-left: 5px;
     align-items: center;
@@ -79,3 +79,49 @@
     display: flex;
     flex-direction: row;
 }
+
+.modal-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+.modal-title {
+    font-family: GmarketSansMedium;
+}
+
+.modal-input {
+    font-family: GmarketSansMedium;
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .modal-button {
+    font-family: GmarketSansMedium;
+    background-color: #ff5722;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .modal-button:hover {
+    background-color: #e64a19;
+  }
+  
+  .modal-message {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #4caf50; /* Success color */
+  }
+  
+  .modal-message.error {
+    color: #f44336; /* Error color */
+  }

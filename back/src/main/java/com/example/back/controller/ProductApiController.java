@@ -6,10 +6,7 @@ import com.example.back.entity.ProductEntity;
 import com.example.back.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -30,6 +27,13 @@ public class ProductApiController {
     public ResponseEntity<?> getTrendingProductList() {
 
         List<ProductListDto> res = productService.findTrendingProduct();
+        return ResponseEntity.ok().body(res);
+    }
+
+    @GetMapping("/product/search")
+    public ResponseEntity<?> getProductByTitle(@RequestParam(value = "title", required = false) String title) {
+
+        ProductListDto res = productService.findByTitle(title);
         return ResponseEntity.ok().body(res);
     }
 
