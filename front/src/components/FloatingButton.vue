@@ -21,7 +21,7 @@ export default {
   right: 20px;
   width: 60px;
   height: 60px;
-  background-color: #ff5722;
+  background-color: #2234ff;
   color: white;
   border-radius: 50%;
   display: flex;
