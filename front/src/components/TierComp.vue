@@ -103,11 +103,11 @@ export default {
         },
         createTier() {
             const tierData = {
-                S: this.lists[0].numberList,
-                A: this.lists[1].numberList,
-                B: this.lists[2].numberList,
-                C: this.lists[3].numberList,
-                D: this.lists[4].numberList,
+                s: this.lists[0].numberList,
+                a: this.lists[1].numberList,
+                b: this.lists[2].numberList,
+                c: this.lists[3].numberList,
+                d: this.lists[4].numberList,
             };
             const token = localStorage.getItem('jwtToken');
             axios.post('http://localhost:8080/tier', tierData, {
