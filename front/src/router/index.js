@@ -21,6 +21,11 @@ const router = createRouter({
             path: "/tier",
             name: "tier",
             component: () => import("../pages/TierPage.vue"),
+        },
+        {
+            path: "/mytier",
+            name: "mytier",
+            component: () => import("../pages/MyTierPage.vue"),
         }
     ],
 });

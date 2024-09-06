@@ -13,6 +13,7 @@
             <a href="/recommendation">추천</a>
         </div>
         <div id="login-content">
+            <router-link to="/mytier"> MyTier</router-link>
             <a v-if="user"> 안녕하세요, {{ user }}님 | <small @click="logout">로그아웃</small></a>
             <a v-else>
                 <router-link to="/login">로그인</router-link>
