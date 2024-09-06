@@ -1,7 +1,7 @@
 package com.example.back.dto;
 
 
-import com.example.back.entity.ProductEntity;
+import com.example.back.entity.Product;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,7 +22,7 @@ public class ProductDetailDto {
     private String imageUrl;
     private Long hits;
 
-    public ProductDetailDto(ProductEntity product) {
+    public ProductDetailDto(Product product) {
         this.id = product.getId();
         this.title = product.getTitle();
         this.type = product.getType();

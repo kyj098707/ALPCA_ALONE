@@ -1,16 +1,10 @@
 package com.example.back.dto;
 
 
-import com.example.back.entity.ProductEntity;
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.example.back.entity.Product;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.ColumnDefault;
 
 @Data
 @NoArgsConstructor
@@ -28,7 +22,7 @@ public class ProductListDto {
     private String imageUrl;
 
 
-    public ProductListDto(ProductEntity product) {
+    public ProductListDto(Product product) {
         this.id = product.getId();
         this.title = product.getTitle();
         this.type = product.getType();
