@@ -1,6 +1,6 @@
 package com.example.back.dto;
 
-import com.example.back.entity.UserEntity;
+import com.example.back.entity.Member;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -11,7 +11,7 @@ import java.util.Collection;
 
 @RequiredArgsConstructor
 public class CustomUserDetails implements UserDetails {
-    private final UserEntity userEntity;
+    private final Member member;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -23,7 +23,7 @@ public class CustomUserDetails implements UserDetails {
             @Override
             public String getAuthority() {
 
-                return userEntity.getRole();
+                return member.getRole();
             }
         });
 
@@ -33,22 +33,25 @@ public class CustomUserDetails implements UserDetails {
     @Override
     public String getPassword() {
 
-        return userEntity.getPassword();
+        return member.getPassword();
+    }
+
+
+    public int getId() {
+        return member.getId();
     }
 
     public String getEmail(){
-        return userEntity.getEmail();
+        return member.getEmail();
     }
 
     @Override
     public String getUsername() {
-
-        return userEntity.getEmail();
+        return member.getUsername();
     }
 
     @Override
     public boolean isAccountNonExpired() {
-
         return true;
     }
 

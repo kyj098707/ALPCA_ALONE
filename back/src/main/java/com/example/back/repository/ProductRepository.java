@@ -1,22 +1,20 @@
 package com.example.back.repository;
 
-import com.example.back.entity.ProductEntity;
+import com.example.back.entity.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-import java.util.Optional;
 
 
 @Repository
-public interface ProductRepository extends JpaRepository<ProductEntity, Integer> {
-    ProductEntity findById(Long id);
+public interface ProductRepository extends JpaRepository<Product, Integer> {
+    Product findById(Long id);
 
 //    @Query("SELECT p FROM ProductEntity p ORDER BY p.rating DESC")
-    List<ProductEntity> findTop10ByOrderByRatingDesc();
+    List<Product> findTop10ByOrderByRatingDesc();
 
-    List<ProductEntity> findTop20ByOrderByRatingDesc();
+    List<Product> findTop20ByOrderByRatingDesc();
 
-    ProductEntity findByTitle(String title);
+    Product findByTitle(String title);
 }

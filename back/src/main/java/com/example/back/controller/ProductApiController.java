@@ -2,14 +2,13 @@ package com.example.back.controller;
 
 import com.example.back.dto.ProductDetailDto;
 import com.example.back.dto.ProductListDto;
-import com.example.back.entity.ProductEntity;
 import com.example.back.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RequiredArgsConstructor
 @RestController
@@ -18,13 +17,15 @@ public class ProductApiController {
 
     @GetMapping("/product")
     public ResponseEntity<?> getProductList() {
-
+        String name = SecurityContextHolder.getContext().getAuthentication().getName();
         List<ProductListDto> res = productService.findAll();
         return ResponseEntity.ok().body(res);
     }
 
     @GetMapping("/product/trending")
     public ResponseEntity<?> getTrendingProductList() {
+        String name = SecurityContextHolder.getContext().getAuthentication().getName();
+        System.out.println(name);
 
         List<ProductListDto> res = productService.findTrendingProduct();
         return ResponseEntity.ok().body(res);

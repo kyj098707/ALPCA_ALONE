@@ -2,7 +2,7 @@ package com.example.back.service;
 
 
 import com.example.back.dto.JoinDto;
-import com.example.back.entity.UserEntity;
+import com.example.back.entity.Member;
 import com.example.back.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -19,10 +19,9 @@ public class JoinService {
         String email = joinDto.getEmail();
         String password = joinDto.getPassword();
         String gender = joinDto.getGender();
-        System.out.println("Dddd"  + username + email + password + gender);
         if (userRepository.existsByUsername(username)) return;
 
-        UserEntity data = new UserEntity();
+        Member data = new Member();
 
         data.setUsername(username);
         data.setEmail(email);

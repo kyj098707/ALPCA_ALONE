@@ -1,5 +1,7 @@
 package com.example.back.config;
 
+import com.example.back.jwt.JwtFilter;
+import com.example.back.jwt.JwtUtil;
 import com.example.back.jwt.LoginFilter;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
@@ -23,6 +25,9 @@ import java.util.Collections;
 @RequiredArgsConstructor
 public class SecurityConfig {
     private final AuthenticationConfiguration authenticationConfiguration;
+    private final JwtUtil jwtUtil;
+
+
 
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration configuration) throws Exception {
@@ -41,10 +46,12 @@ public class SecurityConfig {
         http
                 .authorizeHttpRequests((auth) -> auth
                         .requestMatchers("/login","/","/join").permitAll()
-                        .anyRequest().permitAll());
+                        .anyRequest().authenticated());
 //                        .anyRequest().authenticated());
         http
-                .addFilterAt(new LoginFilter(authenticationManager(authenticationConfiguration)), UsernamePasswordAuthenticationFilter.class);
+                .addFilterBefore(new JwtFilter(jwtUtil), LoginFilter.class);
+        http
+                .addFilterAt(new LoginFilter(authenticationManager(authenticationConfiguration), jwtUtil), UsernamePasswordAuthenticationFilter.class);
         http
                 .sessionManagement((session) -> session
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS));
