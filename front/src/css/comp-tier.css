@@ -102,7 +102,7 @@
   
   .modal-button {
     font-family: GmarketSansMedium;
-    background-color: #ff5722;
+    background-color: #000430;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -124,4 +124,20 @@
   
   .modal-message.error {
     color: #f44336; /* Error color */
+  }
+  
+  #create-tier-btn:hover {
+    background-color: #0b006f;
+  }
+  #create-tier-btn {
+    font-family: GmarketSansMedium;
+    background-color: #000000;
+    color: rgb(216, 216, 216);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 90%;
   }

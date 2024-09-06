@@ -25,13 +25,20 @@ import {
 
 export default {
     mounted() {
-       axios.get("http://localhost:8080/product/trending")
-       .then(response => {
-        this.products = response.data;
-       })
-       .catch(error => {
-        console.log(error)
-       })
+        const token = localStorage.getItem('jwtToken');
+        axios.get("http://localhost:8080/product/trending",
+            {
+                headers: {
+                    'Authorization': token
+                }
+            }
+        )
+            .then(response => {
+                this.products = response.data;
+            })
+            .catch(error => {
+                console.log(error)
+            })
     },
     components: {
         Swiper,

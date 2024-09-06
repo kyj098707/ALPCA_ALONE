@@ -24,6 +24,10 @@
             <p v-if="message" class="modal-message">{{ message }}</p>
         </div>
     </AddModal>
+
+    <div>
+        <button @click="createTier" id="create-tier-btn"> 티어표 제작하기 </button>
+    </div>
 </div>
 </template>
 
@@ -97,7 +101,32 @@ export default {
             this.draggedItem = null;
 
         },
+        createTier() {
+            const tierData = {
+                s: this.lists[0].numberList,
+                a: this.lists[1].numberList,
+                b: this.lists[2].numberList,
+                c: this.lists[3].numberList,
+                d: this.lists[4].numberList,
+            };
+            const token = localStorage.getItem('jwtToken');
+            axios.post('http://localhost:8080/tier', tierData, {
+                    headers: {
+                        'Authorization': token
+                    }
+                })
+                .then(response => {
+                    console.log('티어표가 성공적으로 제작되었습니다:', response.data);
+                    alert('티어표가 성공적으로 제작되었습니다.');
+                })
+                .catch(error => {
+                    console.error('티어표 제작 중 오류가 발생했습니다:', error);
+                    alert('티어표 제작 중 오류가 발생했습니다. 다시 시도해주세요.');
+                });
+        },
+
         fetchProduct() {
+            const token = localStorage.getItem('jwtToken');
             if (!this.title) {
                 this.message = "제목을 입력해주세요";
                 return;
@@ -108,6 +137,9 @@ export default {
                     params: {
                         title: this.title
                     },
+                    headers: {
+                        'Authorization': token
+                    }
                 })
                 .then((response) => {
                     this.message = `정상적으로 등록되었습니다: ${response.data.title}`;
@@ -127,7 +159,12 @@ export default {
         },
     },
     mounted() {
-        axios.get("http://localhost:8080/product/defaulttier")
+        const token = localStorage.getItem('jwtToken');
+        axios.get("http://localhost:8080/product/defaulttier", {
+                headers: {
+                    'Authorization': token
+                }
+            })
             .then(response => {
                 this.lists[4].numberList = response.data;
             })

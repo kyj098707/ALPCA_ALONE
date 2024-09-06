@@ -19,7 +19,6 @@ public class ProductEntity {
     @Column(nullable = false)
     private String title;
 
-    @Column(nullable = true)
     private String type;
 
     @Column(nullable = false)

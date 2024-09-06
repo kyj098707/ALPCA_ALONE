@@ -3,9 +3,9 @@
     <div id="login-card">
         <img id="login-content-img" src="img/favicon.png">
         <h1> KTier 로그인 </h1>
-        <h2> 이메일 로그인 </h2>
+        <h2> 아이디로 로그인 </h2>
         <div id="login-form">
-            <div> <input type="email" v-model="email" id="email-input" placeholder="Email Address"> </div>
+            <div> <input type="username" v-model="username" id="username-input" placeholder="Username"> </div>
             <div> <input type="password" v-model="password" id="password-input" placeholder="Password"> </div>
         </div>
 
@@ -28,17 +28,32 @@ import axios from "axios";
 export default {
     data() {
         return {
-            email: '',
+            username: '',
             password: '',
         };
     },
     methods: {
         async login() {
             try {
-                const response= await axios.post('http://localhost:8080/login', {
-                    email : this.email,
-                    password : this.password,
+                const formData = new FormData();
+                formData.append('username', this.username);
+                formData.append('password', this.password);
+
+                const response = await axios.post('http://localhost:8080/login', formData, {
+                    headers: {
+                        'Content-Type': 'multipart/form-data'
+                    }
                 });
+                const token = response.headers['authorization'];
+                if (token) {
+                    // 로컬 스토리지에 JWT 토큰 저장
+                    localStorage.setItem('jwtToken', token);
+                    this.$router.push('/');
+                } else {
+                    console.log('로그인 실패: JWT 토큰이 응답에 없습니다.');
+                }
+
+
                 this.$router.push('/');
                 console.log(response);
             } catch (error) {
