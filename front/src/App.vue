@@ -4,17 +4,13 @@
   <Footer />
 </template>
 
-<script>
+<script setup>
 import Header from './components/HeaderComp.vue'
 import Footer from './components/FooterComp.vue'
+import { useAuthStore } from '@/stores/auth';
 
-export default {
-  name: 'App',
-  components: {
-    Header,
-    Footer
-  }
-}
+const authStore = useAuthStore();
+authStore.loadUserFromToken();
 </script>
 
 <style>

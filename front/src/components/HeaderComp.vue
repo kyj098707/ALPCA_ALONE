@@ -13,17 +13,30 @@
             <a href="/recommendation">추천</a>
         </div>
         <div id="login-content">
-            <li v-if="user"> Hello, {{ user }}</li>
-            <li v-else>
-                <router-link to="/login">Login</router-link>
-            </li>
+            <a v-if="user"> 안녕하세요, {{ user }}님 | <small @click="logout">로그아웃</small></a>
+            <a v-else>
+                <router-link to="/login">로그인</router-link>
+            </a>
         </div>
     </div>
 </nav>
 </template>
 
-<script>
-
+<script setup>
+import {
+    computed
+} from 'vue';
+import { useRouter } from 'vue-router';
+import {
+    useAuthStore
+} from '@/stores/auth';
+const router = useRouter();
+const authStore = useAuthStore();
+const user = computed(() => authStore.user);
+const logout = () => {
+    authStore.logout(); 
+    router.push('/');
+}
 </script>
 
 <style scoped>

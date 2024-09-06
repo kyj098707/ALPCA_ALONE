@@ -44,7 +44,7 @@ public class TierService {
     public void createTier(TierCreateDto tierCreateDto, String username){
 
         Member member = userRepository.findByUsername(username);
-        
+
         List<Tier> tiersToDelete = tierRepository.findByMember(member);
         if (!tiersToDelete.isEmpty()) {
             tierRepository.deleteAll(tiersToDelete);  // Member와 연결된 모든 Tier 삭제
