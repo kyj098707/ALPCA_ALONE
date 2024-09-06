@@ -10,11 +10,11 @@
         </div>
 
         <button id="login-btn" @click="login">
-            <div class="loading-spinner mr-2 h-6 w-6 bg-white hidden"></div>로그인
+            <div ></div>로그인
         </button>
 
         <div id="additional-function">
-            <a href="/member/recovery_password" class="text-rg font-medium text-white hover:text-psbl-light">비밀번호 찾기</a>
+            <a href="/member/recovery_password">비밀번호 찾기</a>
             <p class="flex-shrink-0 flex-grow-0 text-center text-rg font-medium text-white">|</p> <a href="/join" class="text-rg font-medium text-white hover:text-psbl-light">이메일 회원가입</a>
         </div>
     </div>
