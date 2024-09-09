@@ -2,6 +2,7 @@ package com.example.back.controller;
 
 import com.example.back.dto.ProductDetailDto;
 import com.example.back.dto.ProductListDto;
+import com.example.back.entity.Product;
 import com.example.back.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -19,6 +20,13 @@ public class ProductApiController {
     public ResponseEntity<?> getProductList() {
         String name = SecurityContextHolder.getContext().getAuthentication().getName();
         List<ProductListDto> res = productService.findAll();
+        return ResponseEntity.ok().body(res);
+    }
+
+    @GetMapping("/product/contain")
+    public ResponseEntity<?> searchProducts(@RequestParam String query) {
+        productService.findByTitleContainingIgnoreCase(query);
+        List<ProductListDto> res = productService.findByTitleContainingIgnoreCase(query);
         return ResponseEntity.ok().body(res);
     }
 

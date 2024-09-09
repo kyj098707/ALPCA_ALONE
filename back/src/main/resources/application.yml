@@ -12,6 +12,6 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
   sql:
     init:
-      mode: always
+      mode: never
   jwt:
     secret: lottegiantslottegiantslottegiantslottegiants

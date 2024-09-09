@@ -57,4 +57,12 @@ public class ProductService {
         ProductListDto res = new ProductListDto(product);
         return res;
     }
+
+    public List<ProductListDto> findByTitleContainingIgnoreCase(String query) {
+        List<Product> products = productRepository.findByTitleContainingIgnoreCase(query);
+        return products.stream()
+                .map(ProductListDto::new)
+                .collect(toList());
+    }
+
 }
