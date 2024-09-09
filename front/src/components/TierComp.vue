@@ -3,7 +3,7 @@
     <div class="col-wrapper" v-for="(item, idx) in lists" :key="item.id">
         <div class="col" @drop.prevent="onDrop($event, idx)" @dragenter.prevent @dragover.prevent="onDragOver">
             <div class="grade-box">
-                {{item.id}}
+                <img class="tier-imgae" :src="item.image_url">
             </div>
             <div class="tier-content-box">
                 <div v-for="(product, index) in item.numberList" :key="product.id" class="box" @dragstart="startDrag($event, product, index)" draggable="true">
@@ -43,11 +43,11 @@ const title = ref("");
 const message = ref("");
 
 const lists = reactive([
-  { id: "S", numberList: [] },
-  { id: "A", numberList: [] },
-  { id: "B", numberList: [] },
-  { id: "C", numberList: [] },
-  { id: "보관소", numberList: [] },
+  { image_url: "img/stier.png", numberList: [] },
+  { image_url: "img/atier.png", numberList: [] },
+  { image_url: "img/btier.png", numberList: [] },
+  { image_url: "img/ctier.png", numberList: [] },
+  { image_url: "img/dtier.png", numberList: [] },
 ]);
 
 const startDrag = (event, product) => {

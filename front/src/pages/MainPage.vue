@@ -97,23 +97,4 @@ export default {
 
 <style scoped>
 @import "../css/page-main.css";
-
-#suggestions-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    background-color: white;
-    border: 1px solid #ccc;
-    max-height: 200px;
-    overflow-y: auto;
-}
-
-#suggestions-list li {
-    padding: 8px;
-    cursor: pointer;
-}
-
-#suggestions-list li:hover {
-    background-color: #f0f0f0;
-}
 </style>

@@ -14,7 +14,7 @@
         </div>
         <div id="login-content">
             
-            <a v-if="user"> <router-link to="/mytier"> MyTier</router-link> 안녕하세요, {{ user }}님 | <small @click="logout">로그아웃</small></a>
+            <a v-if="user"> <router-link to="/mytier"> 내 티어표</router-link> 안녕하세요, {{ user }}님 | <small @click="logout">로그아웃</small></a>
             <a v-else>
                 <router-link to="/login">로그인</router-link>
             </a>
@@ -36,7 +36,7 @@ const authStore = useAuthStore();
 const user = computed(() => authStore.user);
 const logout = () => {
     authStore.logout(); 
-    router.push('/');
+    router.push('/login');
 }
 </script>
 
