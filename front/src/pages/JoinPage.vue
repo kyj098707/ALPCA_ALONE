@@ -50,45 +50,37 @@
 </div>
 </template>
 
-<script>
-import {
-    ref
-} from 'vue';
+<script setup>
+import { ref } from 'vue';
 import axios from 'axios';
-export default {
-    setup() {
-        const form = ref({
-            username: '',
-            email: '',
-            password: '',
-            passwordConfirm: '',
-            gender: ''
-        })
+import { useRouter } from 'vue-router';
 
-        const submitForm = async () => {
-            if (form.value.password !== form.value.passwordConfirm) {
-                alert('비밀번호가 일치하지 않습니다.');
-                return
-            }
+const router = useRouter();
+const form = ref({
+    username: '',
+    email: '',
+    password: '',
+    passwordConfirm: '',
+    gender: ''
+});
 
-            try {
-                const response = await axios.post('http://localhost:8080/join', form.value)
-                alert("회원가입 성공");
-                console.log(response);
-            }
-            catch (error) {
-                console.log(error);
-                alert("회원가입 실패")
-            }
-        };
+const submitForm = async () => {
+    if (form.value.password !== form.value.passwordConfirm) {
+        alert('비밀번호가 일치하지 않습니다.');
+        return;
+    }
 
-        return {
-            form,
-            submitForm
-        };
+    try {
+        const response = await axios.post('http://localhost:8080/join', form.value);
+        router.push('/login');
+        console.log(response);
+    } catch (error) {
+        console.log(error);
+        alert("회원가입 실패");
     }
 };
 </script>
+
 
 <style scoped>
 @import '../css/page-join.css'

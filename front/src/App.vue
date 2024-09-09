@@ -56,6 +56,25 @@ body {
 }
 
 @font-face {
+    font-family: 'HeirofLight';
+    font-weight: 400;
+    font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/heiroflight/HeirofLightRegular.eot');
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/heiroflight/HeirofLightRegular.eot?#iefix') format('embedded-opentype'),
+         url('https://cdn.jsdelivr.net/gh/webfontworld/heiroflight/HeirofLightRegular.woff2') format('woff2'),
+         url('https://cdn.jsdelivr.net/gh/webfontworld/heiroflight/HeirofLightRegular.woff') format('woff'),
+         url('https://cdn.jsdelivr.net/gh/webfontworld/heiroflight/HeirofLightRegular.ttf') format("truetype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: '양진체';
+    src: url('https://fastly.jsdelivr.net/gh/supernovice-lab/font@0.9/yangjin.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
   font-family: 'TheJamsil5Bold';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil5Bold.woff2') format('woff2');
   font-weight: 100;

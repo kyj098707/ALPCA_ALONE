@@ -5,7 +5,7 @@ a {
 #menu-container {
     font-family: GmarketSansMedium;
     position: fixed;
-    background-color: rgb(33 58 168/1);
+
     width: 100vw;
     left: 0;
     right: 0;
@@ -38,7 +38,7 @@ a {
 
 #logo-content-img {
     margin-top: 7px;
-    height: 35px;
+    height: 40px;
     width: auto;
 }
 

@@ -3,7 +3,7 @@
     <div class="col-wrapper" v-for="(item, idx) in lists" :key="item.id">
         <div class="col" @drop.prevent="onDrop($event, idx)" @dragenter.prevent @dragover.prevent="onDragOver">
             <div class="grade-box">
-                {{item.id}}
+                <img class="tier-imgae" :src="item.image_url">
             </div>
             <div class="tier-content-box">
                 <div v-for="(product, index) in item.numberList" :key="product.id" class="box" @dragstart="startDrag($event, product, index)" draggable="true">
@@ -52,24 +52,25 @@ export default {
         return {
             showModal: false,
             lists: [{
-                    id: "S",
+                    image_url: "img/stier.png",
                     numberList: []
                 },
                 {
-                    id: "A",
+                    image_url: "img/atier.png",
                     numberList: []
                 },
                 {
-                    id: "B",
+                    image_url: "img/btier.png",
                     numberList: []
                 },
                 {
-                    id: "C",
+                    image_url: "img/ctier.png",
                     numberList: []
-                }, {
-                    id: "보관소",
-                    numberList: this.productArray
-                }
+                },
+                {
+                    image_url: "img/dtier.png",
+                    numberList: []
+                },
             ]
         };
     },

@@ -1,18 +1,17 @@
 spring:
   datasource:
-    url: jdbc:h2:tcp://localhost/~/back
-    username: sa
-    passwrod:
-    driver-class-name: org.h2.Driver
+    url: jdbc:postgresql://localhost:5432/tier?client_encoding=UTF8
+    username: yoonjong
+    password: dbshd12
+    driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
     properties:
       hibernate:
-        format_sql: true
-    defer-datasource-initialization: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
   sql:
     init:
-      mode: always
+      mode: never
   jwt:
     secret: lottegiantslottegiantslottegiantslottegiants
