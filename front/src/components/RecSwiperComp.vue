@@ -1,7 +1,7 @@
 <template>
 <swiper :slidesPerView="4" :spaceBetween="30" :scrollbar="{
       hide: true,
-    }" :modules="modules" :autoplay="{ delay: 2000, disableOnInteraction: false }" class="mySwiper">
+    }" :modules="modules"  :autoplay="{ delay: 2000, disableOnInteraction: false }" class="mySwiper">
     <swiper-slide v-for="(product, index) in products" :key="index">
         <productcard :title="product.title" :image="product.imageUrl" :rating="product.rating" :rank="product.rank" :type="product.type" :genre="product.genre" :detailLink="product.detailLink" :registerLink="product.registerLink"></productcard>
     </swiper-slide>
@@ -27,7 +27,7 @@ import {
 export default {
     mounted() {
         const token = localStorage.getItem('jwtToken');
-        axios.get("http://localhost:8080/product/trending", {
+        axios.get("http://localhost:8080/recommendation", {
                 headers: {
                     'Authorization': token
                 }
@@ -46,7 +46,7 @@ export default {
     },
     data() {
         return {
-            modules: [Pagination,Autoplay],
+            modules: [Pagination, Autoplay],
             products: []
         };
     },

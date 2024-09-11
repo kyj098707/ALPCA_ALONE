@@ -18,7 +18,6 @@ public class ProductApiController {
 
     @GetMapping("/product")
     public ResponseEntity<?> getProductList() {
-        String name = SecurityContextHolder.getContext().getAuthentication().getName();
         List<ProductListDto> res = productService.findAll();
         return ResponseEntity.ok().body(res);
     }

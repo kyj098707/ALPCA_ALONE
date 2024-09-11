@@ -19,7 +19,12 @@
     <AddModal :visible="showModal" @close="closeModal">
         <div class="modal-content-wrapper">
             <h2 class="modal-title">드라마 추가하기</h2>
-            <input v-model="title" type="text" placeholder="드라마 제목을 적어주세요" class="modal-input" />
+            <input v-model="title" type="text" placeholder="드라마 제목을 적어주세요" class="modal-input" @input="fetchSuggestions"/>
+            <ul v-if="suggestions.length" id="suggestions-list">
+                <li v-for="(suggestion, index) in suggestions" :key="index" @click="selectSuggestion(suggestion)">
+                    {{ suggestion.title }}
+                </li>
+            </ul>
             <button @click="fetchProduct" class="modal-button">등록하기</button>
             <p v-if="message" class="modal-message">{{ message }}</p>
         </div>
@@ -50,6 +55,8 @@ export default {
     },
     data() {
         return {
+            title: '', // 검색창의 입력값
+            suggestions: [], // 자동 완성 결과 목록
             showModal: false,
             lists: [{
                     image_url: "img/stier.png",
@@ -125,7 +132,26 @@ export default {
                     alert('티어표 제작 중 오류가 발생했습니다. 다시 시도해주세요.');
                 });
         },
-
+        async fetchSuggestions() {
+            const token = localStorage.getItem('jwtToken');
+            if (this.title.length > 2) {
+                try {
+                    const response = await axios.get(`http://localhost:8080/product/contain?query=${this.title}`,
+                    {headers: {
+                    'Authorization': token
+                }});
+                    this.suggestions = response.data; // 서버에서 받은 데이터를 suggestions 배열에 저장
+                } catch (error) {
+                    console.error('자동 완성 요청 실패:', error);
+                }
+            } else {
+                this.suggestions = []; // 검색어가 짧을 경우 자동 완성 목록을 비움
+            }
+        },
+        selectSuggestion(suggestion) {
+            this.title = suggestion.title; // 선택한 검색어로 검색창 값 변경
+            this.suggestions = []; // 검색창에 선택된 값이 입력되면 자동완성 목록 닫기
+        },
         fetchProduct() {
             const token = localStorage.getItem('jwtToken');
             if (!this.title) {
