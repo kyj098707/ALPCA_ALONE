@@ -1,147 +1,171 @@
-
 #container {
-    display: flex;
-    flex-direction: column;
-} 
+  display: flex;
+  flex-direction: column;
+}
 
-.tier-imgae{
+.tier-imgae {
   width: 60%;
   height: auto;
 }
 
 .col {
-    
-    height: 120px;
-    width: 95%;    
+  height: 120px;
+  width: 95%;
+  margin-left: 5px;
+  align-items: center;
+  border-radius: 8px;
+  display: flex;
 
-    margin-left: 5px;
-    align-items: center;
-    border-radius: 8px;
-    display: flex;
-    
 }
+
 .tier-content-box {
-    overflow-x: scroll;
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 90%;
-    
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  overflow-x: scroll;
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 90%;
+
 }
+
 .tier-content-box::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Opera*/
+  display: none;
+  /* Chrome, Safari, Opera*/
 }
 
-.box {  
-    font-family: GmarketSansMedium;
-    font-size : 0.8rem;
-    width: 100px;
-
-    color: #ffffff;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    margin-right: 10px;
+.box {
+  font-family: GmarketSansMedium;
+  font-size: 0.8rem;
+  width: 100px;
+  color: #ffffff;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
 }
 
 .box-image {
-    height: 100px;
-    width: 100px;
+  height: 100px;
+  width: 100px;
 }
 
-.content-box  {
-    height: 20px;
-    width: 100px;
-    font-family: GmarketSansMedium;
-    font-weight: 700;
-    font-size: 0.5rem;
-    display: flex;  
-    text-align: center;
-    align-items: center;
-    overflow: hidden;
-    justify-content: center;
-    background-color: rgba(255,255,255,0.2);
+.content-box {
+  height: 20px;
+  width: 100px;
+  font-family: GmarketSansMedium;
+  font-weight: 700;
+  font-size: 0.5rem;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  overflow: hidden;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 
 .grade-box {
-    font-family: GmarketSansMedium;
-    font-weight: 700;
-    font-size: 1.4rem;
-    width: 10%;
-    height:100%;
-    color: rgb(255, 249, 249);
-    border-radius: 5px;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    flex-direction: row;
+  background-color: rgba(0, 0, 0, 0.4);
+  font-family: GmarketSansMedium;
+  font-weight: 700;
+  font-size: 1.4rem;
+  width: 10%;
+  height: 100%;
+  color: rgb(255, 249, 249);
+  border-radius: 5px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
 }
 
 .modal-content-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .modal-title {
-    font-family: GmarketSansMedium;
+  font-family: GmarketSansMedium;
 }
 
 .modal-input {
-    font-family: GmarketSansMedium;
-    width: 80%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-  }
-  
-  .modal-button {
-    font-family: GmarketSansMedium;
-    background-color: #000430;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-top: 10px;
-  }
-  
-  .modal-button:hover {
-    background-color: #e64a19;
-  }
-  
-  .modal-message {
-    margin-top: 20px;
-    font-size: 14px;
-    color: #4caf50; /* Success color */
-  }
-  
-  .modal-message.error {
-    color: #f44336; /* Error color */
-  }
-  
-  #create-tier-btn:hover {
-    background-color: #0b006f;
-  }
-  #create-tier-btn {
-    font-family: GmarketSansMedium;
-    background-color: #000000;
-    color: rgb(216, 216, 216);
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-top: 10px;
-    width: 90%;
-  }
+  font-family: GmarketSansMedium;
+  width: 80%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.modal-button {
+  font-family: GmarketSansMedium;
+  background-color: #000430;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.modal-button:hover {
+  background-color: #e64a19;
+}
+
+.modal-message {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #4caf50;
+}
+
+#suggestions-list {
+  width: 100%;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white
+  ;
+  border: 1px solid #ccc;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+#suggestions-list li {
+  font-family: GmarketSansMedium;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.modal-message.error {
+  color: #f44336;
+}
+
+#create-tier-btn:hover {
+  background-color: #0b006f;
+}
+
+#create-tier-btn {
+  font-family: GmarketSansMedium;
+  background-color: #000000;
+  color: rgb(216, 216, 216);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  width: 90%;
+}
